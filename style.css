@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-    font-size: 64px;
+    font-size: 55   px;
     font-weight: 400;
     color: #232C33;
 
@@ -67,9 +67,63 @@ p {
 }
 
 .aside-text {
-    grid-column: 6 / span 6; 
+    grid-column: 6 / span 8; 
     grid-row: 7; 
 }
+
+/* Project-Grid-Container styles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-auto-rows: 200px; /* Sets a fixed row height */
+    gap: 16px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+/* Styling for each grid item */
+.project-grid .grid-item {
+    background-color: #cbd5e1; /* Placeholder color */
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.project-grid .grid-item a {
+    display: block;
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the text color */
+    height: 100%; /* Makes the link fill the entire grid item */
+}
+
+
+/* Specific item positions */
+.project-grid .grid-item:nth-child(1) { 
+    grid-column: span 1; grid-row: span 3; 
+} /* normal */
+.project-grid .grid-item:nth-child(2) {
+    grid-column: span 1; grid-row: span 2; 
+} /* taller */
+.project-grid .grid-item:nth-child(3) {
+    grid-column: span 1; grid-row: span 3; 
+} /* Normal */
+.project-grid .grid-item:nth-child(4) {
+    grid-column: span 1; grid-row: span 3; 
+} /* normal */
+.project-grid .grid-item:nth-child(5) { 
+    grid-column: span 1; grid-row: span 2; 
+} /* taller */
+.project-grid .grid-item:nth-child(6) { 
+    grid-column: span 1; grid-row: span 2; 
+} /* Normal */
+
+
+
 
 /*Image styles */
 img {
