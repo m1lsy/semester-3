@@ -8,19 +8,19 @@
 
 body {
     font-family: polysans;
-    background-color: #DDE4E9;
+    background-color: #F3F2F0;
 }
 
 h1 {
-    font-size: 140px;
+    font-size: 120px;
     font-weight: 400;
-    color: #232C33;
+    color: #213F61;
 }
 
 h2 {
     font-size: 55   px;
     font-weight: 400;
-    color: #232C33;
+    color: #32373b;
 
 }
 
@@ -50,7 +50,7 @@ p {
 
 
 .project-heading {
-    grid-column: 1 / span 8; 
+    grid-column: 1 / span 12; 
     grid-row: 3; 
 }
 
@@ -135,6 +135,29 @@ img {
     justify-content: center;
     text-align: center;
     margin: 0;
+    padding-top: 70px;
+}
+
+.image-container-2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    gap: 50px;
+    padding-top: 70px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding-top: 70px;
+}
+
+video {
+    width: 100%;
+    height: auto;
 }
 
 /* Nav-Bar styles */
@@ -143,7 +166,7 @@ img {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #E8EEF2;
+    background: #FEFAED;
     border: 2px solid brown;
     display: flex;
     gap: 40px;
