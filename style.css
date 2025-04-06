@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: polysans;
+    font-family: polysans,inter;
     background-color: #F3F2F0;
 }
 
@@ -25,10 +25,14 @@ h2 {
 }
 
 p {
+    font-family: inter;
     font-size: 24px;
-    color: #232C33;
+    color: #323638;
 }
 
+b {
+    font-weight: 600;
+}
 /* Main Grid Container */
 .grid-container {
     display: grid;
