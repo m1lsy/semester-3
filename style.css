@@ -24,6 +24,14 @@ h2 {
 
 }
 
+h4 {
+    font-weight: 400;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 40px;
+}
 p {
     font-family: inter;
     font-size: 24px;
@@ -73,6 +81,16 @@ b {
 .aside-text {
     grid-column: 6 / span 8; 
     grid-row: 7; 
+}
+
+.quote {
+    grid-column: 4 / span 8; 
+    grid-row: 7; 
+}
+
+.quote-source {
+    grid-column: 10 / span 8; 
+    grid-row: 12; 
 }
 
 /* Project-Grid-Container styles */
