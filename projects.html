@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects & Learning Outcomes</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <main id="content">
-        <section class="project-heading grid-container">
-            <div class="project-heading">
-                <h1>Projects</h1>
-            </div>
-        </section>
-        <section class="project-grid">
-            <div class="grid-item">
-                <a href="index.html">STUDIO MYO</a>
-            </div>
-            <div class="grid-item">
-                <a href="krom.html">KROM</a>
-            </div>
-            <div class="grid-item">
-                <a href="portfolio-page.html">PORTFOLIO</a>
-            </div>
-            <div class="grid-item">
-                <a href="another-page.html"></a>
-            </div>
-            <div class="grid-item">
-                <a href="another-page.html"></a>
-            </div>
-            <div class="grid-item">
-                <a href="another-page.html"></a>
-            </div>
-        </section>
-        
-    </main>
-    <nav class="navbar">
-            <a href="projects.html">PROJECTS</a>
-            <a href="learning-outcomes.html">LEARNING OUTCOMES</a>
-            <a href="about-me.html">ABOUT</a>
-        </nav>
+  <main id="content">
+    <section class="project-heading grid-container">
+      <div class="project-heading">
+        <h1 id="mainTitle">Projects</h1>
+        <button id="toggleButton">Switch to Learning Outcomes</button>
+      </div>
+    </section>
+
+    <section class="project-grid" id="tileContainer">
+      <!-- Project Tiles -->
+      <div class="grid-item">
+        <a href="index.html">STUDIO MYO</a>
+    </div>
+    <div class="grid-item">
+        <a href="krom.html">KROM</a>
+    </div>
+    <div class="grid-item">
+        <a href="portfolio-page.html">PORTFOLIO</a>
+    </div>
+    <div class="grid-item">
+        <a href="another-page.html"></a>
+    </div>
+    <div class="grid-item">
+        <a href="another-page.html"></a>
+    </div>
+    <div class="grid-item">
+        <a href="another-page.html"></a>
+    </div>
+    </section>
+  </main>
+
+  <nav class="navbar">
+    <a href="#" id="navProjects">PROJECTS</a>
+    <a href="#" id="navLearning">LEARNING OUTCOMES</a>
+    <a href="about-me.html">ABOUT</a>
+  </nav>
+
+  <script src="script.js"></script>
 </body>
 </html>
