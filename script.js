@@ -3,17 +3,17 @@ const projects = [
     { title: 'STUDIO MYO', link: 'index.html' },
     { title: 'KROM', link: 'krom.html' },
     { title: 'PORTFOLIO', link: 'portfolio-page.html' },
-    { title: '', link: 'another-page.html' },
-    { title: '', link: 'another-page.html' },
-    { title: '', link: 'another-page.html' }
+    { title: 'Project 4', link: 'another-page.html' },
+    { title: 'Project 5', link: 'another-page.html' },
+    { title: 'Project 6', link: 'another-page.html' }
   ];
   
   const learningOutcomes = [
-    'Understand JavaScript fundamentals',
-    'Build dynamic web applications',
-    'Work with APIs and asynchronous code',
-    'Master DOM manipulation',
-    'Develop problem-solving skills'
+    { title: 'Learning Outcome 1', link: 'lo1.html' },
+    { title: 'Learning Outcome 2', link: 'lo2.html' },
+    { title: 'Learning Outcome 3', link: 'lo3.html' },
+    { title: 'Learning Outcome 4', link: 'lo4.html' },
+    { title: 'Learning Outcome 5', link: 'lo5.html' }
   ];
   
   // Toggle state
@@ -26,41 +26,36 @@ const projects = [
   const navProjects = document.getElementById('navProjects');
   const navLearning = document.getElementById('navLearning');
   
-  // Function to render project or outcome tiles
+  // Render function
   function renderTiles() {
     tileContainer.innerHTML = ''; // Clear current tiles
   
-    if (showingProjects) {
-      mainTitle.textContent = 'Projects';
-      toggleButton.textContent = 'Switch to Learning Outcomes';
+    const data = showingProjects ? projects : learningOutcomes;
   
-      projects.forEach(project => {
-        const tile = document.createElement('div');
-        tile.className = 'grid-item';
-        tile.innerHTML = `<a href="${project.link}">${project.title}</a>`;
-        tileContainer.appendChild(tile);
-      });
+    data.forEach(item => {
+      const tile = document.createElement('div');
+      tile.className = 'grid-item';
   
-    } else {
-      mainTitle.textContent = 'Learning Outcomes';
-      toggleButton.textContent = 'Switch to Projects';
+      const link = document.createElement('a');
+      link.href = item.link;
+      link.textContent = item.title;
   
-      learningOutcomes.forEach(outcome => {
-        const tile = document.createElement('div');
-        tile.className = 'grid-item tile'; // Add your custom tile styling
-        tile.textContent = outcome;
-        tileContainer.appendChild(tile);
-      });
-    }
+      tile.appendChild(link);
+      tileContainer.appendChild(tile);
+    });
+  
+    // Update title and button
+    mainTitle.textContent = showingProjects ? 'Projects' : 'Learning Outcomes';
+    toggleButton.textContent = showingProjects ? 'Switch to Learning Outcomes' : 'Switch to Projects';
   }
   
-  // Toggle button listener
+  // Toggle view on button click
   toggleButton.addEventListener('click', () => {
     showingProjects = !showingProjects;
     renderTiles();
   });
   
-  // Optional: Enable navbar link behavior
+  // Navbar links
   navProjects.addEventListener('click', (e) => {
     e.preventDefault();
     showingProjects = true;
