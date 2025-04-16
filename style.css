@@ -41,6 +41,12 @@ p {
 b {
     font-weight: 600;
 }
+
+a {
+    color: #323638;
+    text-decoration: none; 
+    font-size: 18px;
+  }
 /* Main Grid Container */
 .grid-container {
     display: grid;
