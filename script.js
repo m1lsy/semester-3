@@ -1,121 +1,183 @@
-
-// Tile Data Definitions
-
-// Array of project objects — each with a title, link, and (optionally) a video
+// Tile Data Definitions - Using height variations instead of column spans
 const projects = [
-    { title: 'STUDIO MYO', link: 'index.html', video: 'Myovideo.mp4' },
-    { title: 'KROM', link: 'krom.html' },
-    { title: 'PORTFOLIO', link: 'portfolio-page.html' },
-    { title: 'Project 4', link: 'another-page.html' },
-    { title: 'Project 5', link: 'another-page.html' },
-    { title: 'Project 6', link: 'another-page.html' }
+    { 
+      title: 'STUDIO MYO', 
+      link: 'index.html', 
+      image: 'myo-mockup-crop.png',
+      size: 'tall' // tall height
+    },
+    { 
+      title: 'KROM', 
+      link: 'krom.html', 
+      image: 'mockup-center.png',
+      size: 'medium' // medium height
+    },
+    { 
+      title: 'PORTFOLIO', 
+      link: 'portfolio-page.html', 
+      image: 'images/portfolio.jpg',
+      size: 'short' // short height
+    },
+    { 
+      title: 'UX DESIGN', 
+      link: 'ux-design.html', 
+      image: 'images/ux.jpg',
+      size: 'medium' // medium height
+    },
+    { 
+      title: 'CODING PRACTICE', 
+      link: 'photography.html', 
+      image: 'images/photography.jpg',
+      size: 'tall' // tall height
+    },
+    { 
+      title: 'BRANDING', 
+      link: 'branding.html', 
+      image: 'images/branding.jpg',
+      size: 'short' // short height
+    },
+    { 
+      title: 'BLANK', 
+      link: 'web-design.html', 
+      image: 'images/web.jpg',
+      size: 'tall' // tall height
+    },
+    { 
+      title: 'BLANK', 
+      link: 'illustration.html', 
+      image: 'images/illustration.jpg',
+      size: 'medium' // medium height
+    },
+    { 
+      title: 'BLANK', 
+      link: 'motion.html', 
+      image: 'images/motion.jpg',
+      size: 'short' // short height
+    }
   ];
   
-  // Array of learning outcome objects — each with a title and a link
   const learningOutcomes = [
-    { title: 'Learning Outcome 1', link: 'lo1.html' },
-    { title: 'Learning Outcome 2', link: 'lo2.html' },
-    { title: 'Learning Outcome 3', link: 'lo3.html' },
-    { title: 'Learning Outcome 4', link: 'lo4.html' },
-    { title: 'Learning Outcome 5', link: 'lo5.html' }
+    { 
+      title: 'Learning Outcome 1', 
+      link: 'lo1.html', 
+      image: 'images/lo1.jpg',
+      size: 'medium'
+    },
+    { 
+      title: 'Learning Outcome 2', 
+      link: 'lo2.html', 
+      image: 'code-mockup.png',
+      size: 'short'
+    },
+    { 
+      title: 'Learning Outcome 3', 
+      link: 'lo3.html', 
+      image: 'images/lo3.jpg',
+      size: 'tall'
+    },
+    { 
+        title: 'Learning Outcome 5', 
+        link: 'lo5.html', 
+        image: 'lo5-pic.png',
+        size: 'medium'
+      },
+    { 
+      title: 'Learning Outcome 4', 
+      link: 'lo4.html', 
+      image: 'linked-in-mockup.png',
+      size: 'short'
+    },
+    
   ];
-
-  // UI State Management
   
-  // Boolean flag to track whether we're currently showing Projects (true) or Learning Outcomes (false)
+  // UI State Management
   let showingProjects = true;
   
-
   // DOM Element References
+  const tileContainer = document.getElementById('tileContainer');
+  const toggleButton = document.getElementById('toggleButton');
+  const mainTitle = document.getElementById('mainTitle');
+  const navProjects = document.getElementById('navProjects');
+  const navLearning = document.getElementById('navLearning');
   
-  // Get references to important DOM elements by their IDs
-  const tileContainer = document.getElementById('tileContainer'); // Where tiles will be rendered
-  const toggleButton = document.getElementById('toggleButton');   // The button to switch views
-  const mainTitle = document.getElementById('mainTitle');         // Main heading on the page
-  const navProjects = document.getElementById('navProjects');     // Nav link to switch to Projects
-  const navLearning = document.getElementById('navLearning');     // Nav link to switch to Learning Outcomes
-  
-  // Function to Render Tiles Dynamically
-  
+  // Function to Render Tiles Dynamically with improved layout
   function renderTiles() {
-    // Clear any existing content in the tile container before rendering new tiles
+    // Clear any existing content in the tile container
     tileContainer.innerHTML = '';
-  
-    // Decide which dataset to use based on the current state (Projects or Learning Outcomes)
+    
+    // Decide which dataset to use based on the current state
     const data = showingProjects ? projects : learningOutcomes;
-  
+    
+    // Create a fragment to improve performance
+    const fragment = document.createDocumentFragment();
+    
     // Loop through each item in the selected dataset and create tile elements
     data.forEach(item => {
       // Create a tile container div for each item
       const tile = document.createElement('div');
-      tile.className = 'grid-item';
-  
+      tile.className = `portfolio-item ${item.size || 'medium'}`; // Apply size class
+      
+  // Updated tile height settings
+if (item.size === 'short') {
+    tile.style.gridRowEnd = 'span 10'; 
+  } else if (item.size === 'medium') {
+    tile.style.gridRowEnd = 'span 13'; 
+  } else if (item.size === 'tall') {
+    tile.style.gridRowEnd = 'span 15'; 
+  }
+      
       // Create an anchor (link) element for the tile
       const link = document.createElement('a');
       link.href = item.link;
-  
-      // If the item has a video, create a video element and add it to the tile
-      if (item.video) {
-        const video = document.createElement('video');
-        video.src = item.video;       // Set video source
-        video.muted = true;           // Mute the video by default
-        video.loop = true;            // Make it loop continuously
-        video.playsInline = true;     // Ensure it plays inline (for mobile devices)
-        video.className = 'tile-video'; // Apply a CSS class for styling
-  
-        // Add event listeners to play video on hover and pause on mouse leave
-        video.addEventListener('mouseenter', () => video.play());
-        video.addEventListener('mouseleave', () => video.pause());
-  
-        // Add the video element to the link element
-        link.appendChild(video);
+      
+      // If the item has an image, create an image element and add it to the tile
+      if (item.image) {
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.title;
+        img.className = 'tile-image';
+        
+        // Add loading="lazy" for better performance
+        img.loading = 'lazy';
+        
+        link.appendChild(img);
       }
-  
+      
       // Create a title element for the tile
       const title = document.createElement('div');
-      title.className = 'tile-title';    // Apply a CSS class for styling
-      title.textContent = item.title;    // Set the text content to the item title
-  
+      title.className = 'tile-title';
+      title.textContent = item.title;
+      
       // Add the title element to the link
       link.appendChild(title);
-  
-      // Add the link (with video and title) to the tile container
+      
+      // Add the link (with image and title) to the tile container
       tile.appendChild(link);
-  
-      // Finally, add the completed tile to the main tile container in the DOM
-      tileContainer.appendChild(tile);
+      
+      // Add the completed tile to our document fragment
+      fragment.appendChild(tile);
     });
-  
+    
+    // Add all tiles to the DOM at once (more efficient)
+    tileContainer.appendChild(fragment);
+    
     // Update the page's main title and toggle button text based on current state
     mainTitle.textContent = showingProjects ? 'Projects' : 'Learning Outcomes';
     toggleButton.textContent = showingProjects ? 'Switch to Learning Outcomes' : 'Switch to Projects';
   }
   
- 
   // Event Listeners for Interactivity
-
-  // When the toggle button is clicked:
-  // - Switch the boolean state
-  // - Re-render the tiles based on new state
   toggleButton.addEventListener('click', () => {
     showingProjects = !showingProjects;
     renderTiles();
   });
   
-  // When the "Projects" navbar link is clicked:
-  // - Prevent the default link behavior
-  // - Set state to show Projects
-  // - Re-render the tiles
   navProjects.addEventListener('click', (e) => {
     e.preventDefault();
     showingProjects = true;
     renderTiles();
   });
   
-  // When the "Learning Outcomes" navbar link is clicked:
-  // - Prevent the default link behavior
-  // - Set state to show Learning Outcomes
-  // - Re-render the tiles
   navLearning.addEventListener('click', (e) => {
     e.preventDefault();
     showingProjects = false;
@@ -123,7 +185,6 @@ const projects = [
   });
   
   // Initial Page Load
-  
-  // Render the tiles once when the page first loads
-  renderTiles();
-  
+  document.addEventListener('DOMContentLoaded', () => {
+    renderTiles();
+  });
