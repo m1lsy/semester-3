@@ -15,43 +15,43 @@ const projects = [
     { 
       title: 'PORTFOLIO', 
       link: 'portfolio-page.html', 
-      image: 'images/portfolio.jpg',
+      image: 'image-placeholder.png',
       size: 'short' // short height
     },
     { 
       title: 'UX DESIGN', 
       link: 'ux-design.html', 
-      image: 'images/ux.jpg',
+      image: 'image-placeholder.png',
       size: 'medium' // medium height
     },
     { 
       title: 'CODING PRACTICE', 
       link: 'photography.html', 
-      image: 'images/photography.jpg',
+      image: 'image-placeholder.png',
       size: 'tall' // tall height
     },
     { 
-      title: 'BRANDING', 
+      title: 'ABOUT ME', 
       link: 'branding.html', 
-      image: 'images/branding.jpg',
+      image: 'image-placeholder.png',
       size: 'short' // short height
     },
     { 
       title: 'BLANK', 
       link: 'web-design.html', 
-      image: 'images/web.jpg',
+      image: 'image-placeholder.png',
       size: 'tall' // tall height
     },
     { 
       title: 'BLANK', 
       link: 'illustration.html', 
-      image: 'images/illustration.jpg',
+      image: 'image-placeholder.png',
       size: 'medium' // medium height
     },
     { 
       title: 'BLANK', 
       link: 'motion.html', 
-      image: 'images/motion.jpg',
+      image: 'image-placeholder.png',
       size: 'short' // short height
     }
   ];
@@ -60,7 +60,7 @@ const projects = [
     { 
       title: 'Learning Outcome 1', 
       link: 'lo1.html', 
-      image: 'images/lo1.jpg',
+      image: 'image-placeholder.png',
       size: 'medium'
     },
     { 
@@ -72,7 +72,7 @@ const projects = [
     { 
       title: 'Learning Outcome 3', 
       link: 'lo3.html', 
-      image: 'images/lo3.jpg',
+      image: 'image-placeholder.png',
       size: 'tall'
     },
     { 
@@ -121,9 +121,9 @@ const projects = [
 if (item.size === 'short') {
     tile.style.gridRowEnd = 'span 10'; 
   } else if (item.size === 'medium') {
-    tile.style.gridRowEnd = 'span 13'; 
+    tile.style.gridRowEnd = 'span 12'; 
   } else if (item.size === 'tall') {
-    tile.style.gridRowEnd = 'span 15'; 
+    tile.style.gridRowEnd = 'span 14'; 
   }
       
       // Create an anchor (link) element for the tile

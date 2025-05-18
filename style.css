@@ -9,11 +9,21 @@
     background-color: #F3F2F0;
     color: #323638;
   }
+  html, body, main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
   
   h1 {
     font-size: 120px;
     font-weight: 400;
     color: #213F61;
+}
+
+main  {
+    margin: 0;
 }
 
 h2 {
@@ -54,14 +64,14 @@ a {
   }
   /* Main content container */
   #content {
-    width: 90%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 0;
   }
   
   .heading-container {
     margin-bottom: 40px;
+    margin-left: 50px;
   }
   
   /* Toggle button styling */
@@ -90,6 +100,7 @@ a {
     margin-bottom: 60px;
     grid-auto-flow: dense;
     grid-auto-rows: 20px;
+    margin: 20px;
   }
   
   /* Portfolio Grid Items */
@@ -260,8 +271,9 @@ img {
 .image-container {
     justify-content: center;
     text-align: center;
-    margin: 0;
+    margin: 10px;
     padding-top: 70px;
+    
 }
 
 .image-container-2 {
