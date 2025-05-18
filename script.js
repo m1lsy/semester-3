@@ -19,7 +19,7 @@ const projects = [
       size: 'short' // short height
     },
     { 
-      title: 'UX DESIGN', 
+      title: 'BLANK', 
       link: 'ux-design.html', 
       image: 'image-placeholder.png',
       size: 'medium' // medium height
