@@ -73,6 +73,25 @@ a {
     text-decoration: none; 
     font-size: 18px;
   }
+  
+  ul.dash-list {
+    list-style: none; /* remove default bullets */
+    padding-left: 1.5em;
+  }
+  
+  ul.dash-list li {
+    position: relative;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  ul.dash-list li::before {
+    content: "–"; /* this is an en dash */
+    position: absolute;
+    left: 0;
+    color: #333; /* adjust color to match your theme */
+  }
+  
   /* Main content container */
   #content {
     max-width: 1440px;

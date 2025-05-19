@@ -29,6 +29,41 @@
                 </a>
             </div>
         </section>
+        <section class="image-container">
+            <img src="github-pages.png" alt="I will add a screenshot of my GitHub Pages deployment here">
+        </section>
+        <section class="aside-container grid-container">
+            <div class="aside-heading">
+                <h2>Version Control Challenges</h2>
+            </div>
+            <div class="aside-text">
+                <p>During my portfolio creation process, I encountered a significant challenge with version control when I accidentally committed a large video file that was over GitHub’s 100MB file size limit. This caused my push to GitHub to be rejected, blocking all future updates to the repository.</p>
+                <br>
+                <p>WHAT WENT WRONG:</p>
+                <ul class="dash-list">
+                    <li>I added and committed a .mov file that was 129MB, exceeding GitHub’s hard limit.</li>
+                    <li>Pushing failed repeatedly with errors suggesting Git Large File Storage (LFS), but I chose not to use LFS.</li>
+                    <li>I tried to remove the file using git-filter-repo, but it refused to run on a non-fresh repo without a --force flag.</li>
+                    <li>After forcing it, I successfully removed the large file — but this also wiped my remote (origin) configuration, which meant my repo no longer knew where to push.</li>
+                </ul>
+        
+                <p>HOW I SOLVED IT:</p>
+                <ul class="dash-list">
+                    <li>Removed the large file from history using:<br><code>git filter-repo --path prototype-mockup-video.mov --invert-paths --force</code></li>
+                    <li>Reconnected the remote repository after it was auto-removed:<br><code>git remote add origin https://github.com/m1lsy/semester-3.git</code></li>
+                    <li>Forced a push to update the remote with the cleaned repository:<br><code>git push --force origin main</code></li>
+                </ul>
+        
+                <p>KEY TAKEAWAYS:</p>
+                <ul class="dash-list">
+                    <li>GitHub has a hard limit of 100MB per file — not just a warning.</li>
+                    <li>Large binary files like videos should never be committed directly unless using a solution like Git LFS (which wasn't necessary here).</li>
+                    <li><code>git filter-repo</code> is powerful for rewriting history but should be used cautiously.</li>
+                    <li>After rewriting history, you must re-add the remote before pushing.</li>
+                    <li>Always double-check what’s being committed with <code>git status</code> and <code>.gitignore</code> files.</li>
+                </ul>
+            </div>
+        </section>        
         <section class="aside-container grid-container">
             <div class="aside-heading">
                 <h2>Collaboration & Team Workflow</h2>
@@ -40,13 +75,55 @@
         </section>
         <section class="aside-container grid-container">
             <div class="aside-heading">
-                <h2>Code Documentation & Communication</h2>
+                <h2>Tile Grid Breakdown</h2>
             </div>
             <div class="aside-text">
-                <p>Here I plan to explain small snippets of code from my project, portfolio and extra side projects</p><br>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic temporibus odit sint autem sunt dolores a rem totam! Amet architecto et unde a molestiae aliquid, placeat deleniti ipsum ut perspiciatis?</p>
+                <p>To create a dynamic and visually engaging way to showcase my Projects and Learning Outcomes, I developed a custom JavaScript tile grid system. Below is a breakdown of how it works:</p><br>
+                
+                <p>DATA-DRIVEN DESIGN</p>
+                <p>All tile content is defined in two structured arrays: <code>projects</code> and <code>learningOutcomes</code>. Each object includes:</p>
+                <ul class="dash-list">
+                    <li><strong>title</strong>: the name of the item</li>
+                    <li><strong>link</strong>: the destination URL</li>
+                    <li><strong>image</strong>: the preview image</li>
+                    <li><strong>size</strong>: custom height (<code>short</code>, <code>medium</code>, or <code>tall</code>) for layout variation</li>
+                </ul>
+                <br>
+                <p>DYNAMIC RENDERING WITH <code>renderTiles()</code></p>
+                <p>This function dynamically builds and displays tiles based on which dataset is currently active. Key features:</p>
+                <ul class="dash-list">
+                    <li><strong>Clears</strong> the existing tile grid</li>
+                    <li><strong>Selects</strong> either <code>projects</code> or <code>learningOutcomes</code> using a toggle flag</li>
+                    <li><strong>Loops</strong> through the data and builds HTML elements on the fly</li>
+                    <li><strong>Uses</strong> <code>DocumentFragment</code> for better performance (less reflow/repaint)</li>
+                </ul>
+                <br>
+                <p>INTERACTIVITY WITH EVENT LISTENERS</p>
+                <p>User can toggle between sections using:</p>
+                <ul class="dash-list">
+                    <li>A <strong>toggle button</strong></li>
+                    <li>Navigation links (<code>Projects</code> and <code>Learning Outcomes</code>)</li>
+                </ul>
+                <p>These update the UI state (<code>showingProjects</code>) and re-render the tiles.</p>
+                <br>
+                <p>PAGE LOAD INITIALIZATION</p>
+                <p>To ensure everything displays correctly when the page loads, I call <code>renderTiles()</code> once on <code>DOMContentLoaded</code>.</p>
+                <br>
+                <p>Why This Matters</p>
+                <ul class="dash-list">
+                    <li><strong>Clean structure</strong>: Separates data, rendering logic, and UI behavior</li>
+                    <li><strong>Reusable logic</strong>: One rendering function handles both projects and learning outcomes</li>
+                    <li><strong>Performance-aware</strong>: Uses <code>DocumentFragment</code> and <code>loading="lazy"</code></li>
+                    <li><strong>Responsive-ready</strong>: Uses tile sizing logic (<code>gridRowEnd</code>) to create a visually diverse layout</li>
+                </ul>
+                <br>
+                <p>This feature highlights my ability to write scalable, maintainable JavaScript to build interactive and modular front-end components.</p><br>
+                <a href="https://github.com/m1lsy/semester-3/blob/main/script.js" target="_blank">
+                    <span class="highlight">VIEW CODE &#8599;</span>
+                </a>
             </div>
         </section>
+                
         <section class="aside-container grid-container">
             <div class="aside-heading">
                 <h2>Reflection on Code Quality & Handover</h2>
