@@ -6,7 +6,7 @@
 
   @font-face {
     font-family: 'PolySansNeutral';
-    src: url('../Fonts/PolySans-Neutral.woff') format('woff');
+    src: url('Fonts/PolySans-Neutral.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
