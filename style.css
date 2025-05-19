@@ -13,11 +13,10 @@
   }
   
   body {
-    font-family: 'PolySansNeutral', sans-serif;
+    font-family: 'PolySansNeutral', inter, sans-serif;
   }
   
   body {
-    font-family: polysans,inter;
     background-color: #F3F2F0;
     color: #323638;
   }
