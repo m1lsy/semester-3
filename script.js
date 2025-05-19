@@ -3,13 +3,13 @@ const projects = [
     { 
       title: 'STUDIO MYO', 
       link: 'index.html', 
-      image: 'myo-mockup-crop.png',
+      image: 'myo-mockup-crop.jpg',
       size: 'tall' // tall height
     },
     { 
       title: 'KROM', 
       link: 'krom.html', 
-      image: 'mockup-center.png',
+      image: 'mockup-center.jpg',
       size: 'medium' // medium height
     },
     { 
@@ -66,7 +66,7 @@ const projects = [
     { 
       title: 'Learning Outcome 2', 
       link: 'lo2.html', 
-      image: 'code-mockup.png',
+      image: 'code-mockup.jpg',
       size: 'short'
     },
     { 
@@ -84,7 +84,7 @@ const projects = [
     { 
       title: 'Learning Outcome 4', 
       link: 'lo4.html', 
-      image: 'linked-in-mockup.png',
+      image: 'linked-in-mockup.jpg',
       size: 'short'
     },
     
