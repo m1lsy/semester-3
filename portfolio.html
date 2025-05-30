@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Creation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="projects.html" class="back-button">&#8592; Back to Projects</a>
+    <main id="content">
+        <section class="project-heading grid-container">
+            <div class="project-heading">
+                <h1>Portfolio Creation</h1>
+            </div>
+            <div class="heading-text">
+                <p>Over the course of the semester, I designed and developed a full portfolio website to display my work and showcase my style as a designer.</p>
+            </div>
+        </section>
+        <section class="aside-container grid-container">
+            <div class="aside-heading">
+                <h2>Designing my Portfolio</h2>
+            </div>
+            <div class="aside-text">
+                <p>When I set out to design my portfolio, I began by researching current design trends and gathering inspiration from platforms like Awwwards and Dribbble. This helped me ensure that my work felt contemporary and in line with modern expectations for layout, navigation, and overall visual presentation. I was particularly drawn to websites like Komma and Stefan Vitasovic for their clean, minimal, and elegant design language — something that strongly resonates with my personal aesthetic.</p><br>
+                <p>I approached my portfolio as a visual presentation rather than a traditional document. I wanted it to feel immersive and curated, placing emphasis on large imagery and thoughtful composition, rather than overwhelming text or dense case studies. To me, a portfolio should act as a showcase — a reflection of both the work I’ve done and the kind of designer I aspire to be.</p><br>
+                <p>My goal was for viewers, especially potential employers or collaborators, to immediately understand my design sensibility: modern, minimal, and user-focused. While minimal design can sometimes be seen as a risky choice — potentially perceived as too simple — I believe it requires strong UI and UX decision-making to execute effectively. I aim to make each interaction feel intentional and polished, balancing clarity with creativity.</p><br>
+                <p>I began sketching out ideas in Figma, experimenting with layout, typography, and user flow, allowing the design to evolve organically from those early explorations. The result is a portfolio that not only showcases my work but also serves as a clear statement of the type of design I’m passionate about.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        let lastScrollTop = 0;
+        const backButton = document.querySelector('.back-button');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide button when scrolling down and past 100px
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>

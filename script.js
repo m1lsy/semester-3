@@ -13,7 +13,7 @@ const projects = [
     },
     { 
       title: 'PORTFOLIO', 
-      link: 'portfolio-page.html', 
+      link: 'portfolio.html', 
       image: 'image-placeholder.png',
       size: 'short' // short height
     },
@@ -21,13 +21,13 @@ const projects = [
       title: 'BLANK', 
       link: 'ux-design.html', 
       image: 'image-placeholder.png',
-      size: 'medium' // medium height
+      size: 'tall' // medium height
     },
     { 
       title: 'CODING PRACTICE', 
       link: 'code.html', 
-      image: 'image-placeholder.png',
-      size: 'tall' // tall height
+      image: 'testpic.png',
+      size: 'medium' // tall height
     },
     { 
       title: 'ABOUT ME', 
@@ -35,24 +35,7 @@ const projects = [
       image: 'image-placeholder.png',
       size: 'short' // short height
     },
-    { 
-      title: 'BLANK', 
-      link: 'web-design.html', 
-      image: 'image-placeholder.png',
-      size: 'tall' // tall height
-    },
-    { 
-      title: 'BLANK', 
-      link: 'illustration.html', 
-      image: 'image-placeholder.png',
-      size: 'medium' // medium height
-    },
-    { 
-      title: 'BLANK', 
-      link: 'motion.html', 
-      image: 'image-placeholder.png',
-      size: 'short' // short height
-    }
+   
   ];
   
   const learningOutcomes = [
