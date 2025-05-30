@@ -1,4 +1,3 @@
-
 const projects = [
     { 
       title: 'STUDIO MYO', 
@@ -97,8 +96,6 @@ const projects = [
   const tileContainer = document.getElementById('tileContainer');
   const toggleButton = document.getElementById('toggleButton');
   const mainTitle = document.getElementById('mainTitle');
-  const navProjects = document.getElementById('navProjects');
-  const navLearning = document.getElementById('navLearning');
   
   // Function to Render Tiles Dynamically with improved layout
   function renderTiles() {
@@ -117,19 +114,24 @@ const projects = [
       const tile = document.createElement('div');
       tile.className = `portfolio-item ${item.size || 'medium'}`; // Apply size class
       
-  // Updated tile height settings
-if (item.size === 'short') {
-    tile.style.gridRowEnd = 'span 10'; 
-  } else if (item.size === 'medium') {
-    tile.style.gridRowEnd = 'span 12'; 
-  } else if (item.size === 'tall') {
-    tile.style.gridRowEnd = 'span 14'; 
-  }
+      // Updated tile height settings
+      if (item.size === 'short') {
+          tile.style.gridRowEnd = 'span 10'; 
+      } else if (item.size === 'medium') {
+          tile.style.gridRowEnd = 'span 12'; 
+      } else if (item.size === 'tall') {
+          tile.style.gridRowEnd = 'span 14'; 
+      }
       
       // Create an anchor (link) element for the tile
       const link = document.createElement('a');
       link.href = item.link;
       
+      // Add a click event listener to track the previous page
+      link.addEventListener('click', () => {
+        localStorage.setItem('previousPage', showingProjects ? 'projects' : 'learningOutcomes');
+      });
+
       // If the item has an image, create an image element and add it to the tile
       if (item.image) {
         const img = document.createElement('img');
@@ -163,7 +165,7 @@ if (item.size === 'short') {
     
     // Update the page's main title and toggle button text based on current state
     mainTitle.textContent = showingProjects ? 'Projects' : 'Learning Outcomes';
-    toggleButton.textContent = showingProjects ? 'Switch to Learning Outcomes' : 'Switch to Projects';
+    toggleButton.textContent = `Switch to ${showingProjects ? 'Learning Outcomes' : 'Projects'}`;
   }
   
   // Event Listeners for Interactivity
@@ -172,19 +174,29 @@ if (item.size === 'short') {
     renderTiles();
   });
   
-  navProjects.addEventListener('click', (e) => {
-    e.preventDefault();
-    showingProjects = true;
-    renderTiles();
-  });
+  // Override back button functionality
+  const backButtons = document.querySelectorAll('.back-button');
+  backButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default link behavior
   
-  navLearning.addEventListener('click', (e) => {
-    e.preventDefault();
-    showingProjects = false;
-    renderTiles();
+      const previousPage = localStorage.getItem('previousPage');
+      if (previousPage === 'learningOutcomes') {
+        showingProjects = false;
+      } else if (previousPage === 'projects') {
+        showingProjects = true;
+      }
+      renderTiles();
+    });
   });
   
   // Initial Page Load
   document.addEventListener('DOMContentLoaded', () => {
+    const previousPage = localStorage.getItem('previousPage');
+    if (previousPage === 'learningOutcomes') {
+      showingProjects = false;
+    } else {
+      showingProjects = true;
+    }
     renderTiles();
   });

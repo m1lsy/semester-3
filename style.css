@@ -92,6 +92,25 @@ a {
     color: #333; /* adjust color to match your theme */
   }
   
+  .back-button {
+    display: inline-block;
+    background-color: #FEFAED;
+    border: 2px solid brown;
+    color: brown;
+    padding: 8px 16px;
+    margin: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: brown;
+    color: #FEFAED;
+}
+
   /* Main content container */
   #content {
     max-width: 1440px;
@@ -337,4 +356,3 @@ video {
       padding: 8px 20px;
     }
   }
-  
