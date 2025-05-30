@@ -46,5 +46,22 @@
                 <p>At the start of the project, we used Trello to divide tasks and track progress. However, after receiving feedback from our coaches, we recognized the need for a more structured and professional tool, so we transitioned to Jira. This allowed us to better align with industry standards for digital project management, offering more advanced features for task assignment, sprint planning, and backlog organization. Alongside this, we created a Team Charter to establish a shared understanding of our goals, working styles, communication expectations, and responsibilities. These tools and agreements helped us maintain transparency, accountability, and effective collaboration throughout the project.</p>
             </div>
     </main>
+    <script>
+        let lastScrollTop = 0;
+        const backButton = document.querySelector('.back-button');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide button when scrolling down and past 100px
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>

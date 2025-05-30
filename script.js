@@ -25,7 +25,7 @@ const projects = [
     },
     { 
       title: 'CODING PRACTICE', 
-      link: 'photography.html', 
+      link: 'code.html', 
       image: 'image-placeholder.png',
       size: 'tall' // tall height
     },

@@ -98,12 +98,22 @@ a {
     border: 2px solid brown;
     color: brown;
     padding: 8px 16px;
-    margin: 20px;
+    /* margin: 20px; */
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.3s ease;
-    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-button.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .back-button:hover {
