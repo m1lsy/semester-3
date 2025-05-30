@@ -1,4 +1,4 @@
-// Tile Data Definitions - Using height variations instead of column spans
+
 const projects = [
     { 
       title: 'STUDIO MYO', 
