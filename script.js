@@ -1,9 +1,10 @@
+// Project data array - contains information for project tiles
 const projects = [
     { 
       title: 'STUDIO MYO', 
       link: 'index.html', 
       image: 'myo-mockup-crop.jpg',
-      size: 'tall' // tall height
+      size: 'tall' // Defines a tall tile height
     },
     { 
       title: 'KROM', 
@@ -38,12 +39,13 @@ const projects = [
    
   ];
   
-  const learningOutcomes = [
+// Learning outcomes data array - contains information for learning outcome tiles
+const learningOutcomes = [
     { 
       title: 'Learning Outcome 1', 
       link: 'lo1.html', 
       image: 'image-placeholder.png',
-      size: 'medium'
+      size: 'medium' // Defines a medium tile height
     },
     { 
       title: 'Learning Outcome 2', 
@@ -72,114 +74,114 @@ const projects = [
     
   ];
   
-  // UI State Management
-  let showingProjects = true;
-  
-  // DOM Element References
-  const tileContainer = document.getElementById('tileContainer');
-  const toggleButton = document.getElementById('toggleButton');
-  const mainTitle = document.getElementById('mainTitle');
-  
-  // Function to Render Tiles Dynamically with improved layout
-  function renderTiles() {
-    // Clear any existing content in the tile container
+// State management - tracks which view is currently displayed
+let showingProjects = true;
+
+// DOM element references for interactive elements
+const tileContainer = document.getElementById('tileContainer');
+const toggleButton = document.getElementById('toggleButton');
+const mainTitle = document.getElementById('mainTitle');
+
+/**
+ * Renders tiles based on current state (projects or learning outcomes)
+ * Clears existing content and creates new tile elements dynamically
+ */
+function renderTiles() {
+    // Clear existing tiles
     tileContainer.innerHTML = '';
     
-    // Decide which dataset to use based on the current state
+    // Select dataset based on current view state
     const data = showingProjects ? projects : learningOutcomes;
     
-    // Create a fragment to improve performance
+    // Create document fragment for better performance
     const fragment = document.createDocumentFragment();
     
-    // Loop through each item in the selected dataset and create tile elements
+    // Loop through dataset and create tile elements
     data.forEach(item => {
-      // Create a tile container div for each item
-      const tile = document.createElement('div');
-      tile.className = `portfolio-item ${item.size || 'medium'}`; // Apply size class
-      
-      // Updated tile height settings
-      if (item.size === 'short') {
-          tile.style.gridRowEnd = 'span 10'; 
-      } else if (item.size === 'medium') {
-          tile.style.gridRowEnd = 'span 12'; 
-      } else if (item.size === 'tall') {
-          tile.style.gridRowEnd = 'span 14'; 
-      }
-      
-      // Create an anchor (link) element for the tile
-      const link = document.createElement('a');
-      link.href = item.link;
-      
-      // Add a click event listener to track the previous page
-      link.addEventListener('click', () => {
-        localStorage.setItem('previousPage', showingProjects ? 'projects' : 'learningOutcomes');
-      });
+        // Create container div for tile
+        const tile = document.createElement('div');
+        tile.className = `portfolio-item ${item.size || 'medium'}`;
+        
+        // Set tile height based on size property
+        if (item.size === 'short') {
+            tile.style.gridRowEnd = 'span 10'; 
+        } else if (item.size === 'medium') {
+            tile.style.gridRowEnd = 'span 12'; 
+        } else if (item.size === 'tall') {
+            tile.style.gridRowEnd = 'span 14'; 
+        }
+        
+        // Create link element
+        const link = document.createElement('a');
+        link.href = item.link;
+        
+        // Store current view state in localStorage when tile is clicked
+        link.addEventListener('click', () => {
+            localStorage.setItem('previousPage', showingProjects ? 'projects' : 'learningOutcomes');
+        });
 
-      // If the item has an image, create an image element and add it to the tile
-      if (item.image) {
-        const img = document.createElement('img');
-        img.src = item.image;
-        img.alt = item.title;
-        img.className = 'tile-image';
+        // Add image if one is specified
+        if (item.image) {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = item.title;
+            img.className = 'tile-image';
+            img.loading = 'lazy'; // Enable lazy loading for better performance
+            link.appendChild(img);
+        }
         
-        // Add loading="lazy" for better performance
-        img.loading = 'lazy';
+        // Create and add title element
+        const title = document.createElement('div');
+        title.className = 'tile-title';
+        title.textContent = item.title;
+        link.appendChild(title);
         
-        link.appendChild(img);
-      }
-      
-      // Create a title element for the tile
-      const title = document.createElement('div');
-      title.className = 'tile-title';
-      title.textContent = item.title;
-      
-      // Add the title element to the link
-      link.appendChild(title);
-      
-      // Add the link (with image and title) to the tile container
-      tile.appendChild(link);
-      
-      // Add the completed tile to our document fragment
-      fragment.appendChild(tile);
+        // Add completed link to tile
+        tile.appendChild(link);
+        
+        // Add tile to document fragment
+        fragment.appendChild(tile);
     });
     
-    // Add all tiles to the DOM at once (more efficient)
+    // Add all tiles to DOM at once
     tileContainer.appendChild(fragment);
     
-    // Update the page's main title and toggle button text based on current state
+    // Update page title and toggle button text
     mainTitle.textContent = showingProjects ? 'Projects' : 'Learning Outcomes';
     toggleButton.textContent = `Switch to ${showingProjects ? 'Learning Outcomes' : 'Projects'}`;
-  }
-  
-  // Event Listeners for Interactivity
-  toggleButton.addEventListener('click', () => {
+}
+
+// Event listener for toggle button - switches between projects and learning outcomes
+toggleButton.addEventListener('click', () => {
     showingProjects = !showingProjects;
     renderTiles();
-  });
-  
-  // Override back button functionality
-  const backButtons = document.querySelectorAll('.back-button');
-  backButtons.forEach(button => {
+});
+
+// Configure back button functionality
+const backButtons = document.querySelectorAll('.back-button');
+backButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-      event.preventDefault(); // Prevent the default link behavior
-  
-      const previousPage = localStorage.getItem('previousPage');
-      if (previousPage === 'learningOutcomes') {
-        showingProjects = false;
-      } else if (previousPage === 'projects') {
-        showingProjects = true;
-      }
-      renderTiles();
+        event.preventDefault();
+        
+        // Check localStorage for previous page state
+        const previousPage = localStorage.getItem('previousPage');
+        if (previousPage === 'learningOutcomes') {
+            showingProjects = false;
+        } else if (previousPage === 'projects') {
+            showingProjects = true;
+        }
+        renderTiles();
     });
-  });
-  
-  // Initial Page Load
-  document.addEventListener('DOMContentLoaded', () => {
+});
+
+// Initialize page on load
+document.addEventListener('DOMContentLoaded', () => {
+    // Check localStorage for previous page state
     const previousPage = localStorage.getItem('previousPage');
     if (previousPage === 'learningOutcomes') {
-      showingProjects = false;
+        showingProjects = false;
     } else {
-      showingProjects = true;
+        showingProjects = true;
     }
     renderTiles();
-  });
+});
