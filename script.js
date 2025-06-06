@@ -3,37 +3,37 @@ const projects = [
     { 
       title: 'STUDIO MYO', 
       link: 'index.html', 
-      image: 'myo-mockup-crop.jpg',
+      image: 'images/myo-mockup-crop.jpg',
       size: 'tall' // Defines a tall tile height
     },
     { 
       title: 'KROM', 
       link: 'krom.html', 
-      image: 'mockup-center.jpg',
+      image: 'images/mockup-center.jpg',
       size: 'medium' // medium height
     },
     { 
       title: 'PORTFOLIO', 
       link: 'portfolio.html', 
-      image: 'image-placeholder.png',
+      image: 'images/image-placeholder.png',
       size: 'short' // short height
     },
     { 
       title: 'BLANK', 
       link: 'ux-design.html', 
-      image: 'image-placeholder.png',
+      image: 'images/image-placeholder.png',
       size: 'tall' // medium height
     },
     { 
       title: 'CODING PRACTICE', 
       link: 'code.html', 
-      image: 'testpic.png',
+      image: 'images/testpic.png',
       size: 'medium' // tall height
     },
     { 
       title: 'ABOUT ME', 
       link: 'branding.html', 
-      image: 'image-placeholder.png',
+      image: 'images/image-placeholder.png',
       size: 'short' // short height
     },
    
@@ -44,31 +44,31 @@ const learningOutcomes = [
     { 
       title: 'Learning Outcome 1', 
       link: 'lo1.html', 
-      image: 'image-placeholder.png',
+      image: 'images/image-placeholder.png',
       size: 'medium' // Defines a medium tile height
     },
     { 
       title: 'Learning Outcome 2', 
       link: 'lo2.html', 
-      image: 'code-mockup.jpg',
+      image: 'images/code-mockup.jpg',
       size: 'short'
     },
     { 
       title: 'Learning Outcome 3', 
       link: 'lo3.html', 
-      image: 'image-placeholder.png',
+      image: 'images/image-placeholder.png',
       size: 'tall'
     },
     { 
         title: 'Learning Outcome 5', 
         link: 'lo5.html', 
-        image: 'lo5-pic.png',
+        image: 'images/lo5-pic.png',
         size: 'medium'
       },
     { 
       title: 'Learning Outcome 4', 
       link: 'lo4.html', 
-      image: 'linked-in-mockup.jpg',
+      image: 'images/linked-in-mockup.jpg',
       size: 'short'
     },
     
