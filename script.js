@@ -15,15 +15,15 @@ const projects = [
     { 
       title: 'PORTFOLIO', 
       link: 'portfolio.html', 
-      image: 'images/image-placeholder.png',
+      image: 'images/main-mockup-portfolio.jpg',
       size: 'short' // short height
     },
-    { 
-      title: 'BLANK', 
-      link: 'ux-design.html', 
-      image: 'images/image-placeholder.png',
-      size: 'tall' // medium height
-    },
+    // { 
+    //   title: 'BLANK', 
+    //   link: 'ux-design.html', 
+    //   image: 'images/image-placeholder.png',
+    //   size: 'tall' // medium height
+    // },
     { 
       title: 'CODING PRACTICE', 
       link: 'code.html', 
@@ -32,8 +32,8 @@ const projects = [
     },
     { 
       title: 'ABOUT ME', 
-      link: 'branding.html', 
-      image: 'images/image-placeholder.png',
+      link: 'aboutme.html', 
+      image: 'images/milaaaa.jpg',
       size: 'short' // short height
     },
    
@@ -44,7 +44,7 @@ const learningOutcomes = [
     { 
       title: 'Learning Outcome 1', 
       link: 'lo1.html', 
-      image: 'images/image-placeholder.png',
+      image: 'images/ipad-usertest .jpg',
       size: 'medium' // Defines a medium tile height
     },
     { 
@@ -56,7 +56,7 @@ const learningOutcomes = [
     { 
       title: 'Learning Outcome 3', 
       link: 'lo3.html', 
-      image: 'images/image-placeholder.png',
+      image: 'images/mockup-for-lo3.jpg',
       size: 'tall'
     },
     { 
