@@ -366,3 +366,20 @@ video {
       padding: 8px 20px;
     }
   }
+
+.footer {
+    color: #213F61;
+    background-color: #F3F2F0;
+    border-top: #213F61 1px solid;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}

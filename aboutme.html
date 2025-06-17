@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <a href="projects.html" class="back-button">&#8592; Back to Projects</a>
     <main id="content">
         <section class="project-heading grid-container">
             <div class="project-heading">
@@ -20,5 +21,26 @@
                 <p>This portfolio is a reflection of what I care about — thoughtful design, smart solutions, and finding creative ways to bring ideas to life.</p>
             </div>
         </section>
+    </main>
+    <footer class="footer">
+        <p>© 2025 Mila Pulvirenti</p>
+    </footer>
+    <script>
+        let lastScrollTop = 0;
+        const backButton = document.querySelector('.back-button');
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide button when scrolling down and past 100px
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                backButton.classList.add('hidden');
+            } else {
+                backButton.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
