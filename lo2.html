@@ -79,6 +79,41 @@
                 </a>
             </div>
         </section>
+        <section class="image-container">
+            <img src="images/gitlab-structure.jpg" alt="GitLab Teamwork">
+        </section>
+        <section class="aside-container grid-container">
+            <div class="aside-heading">
+                <h2>Developing 'Center'</h2>
+            </div>
+            <div class="aside-text">
+                <p>After setting up our GitLab repository, Yurick and I decided to split the tasks by features. We were tasked with building the timer feature, which included a Pomodoro timer, stopwatch, and settings panel.</p><br>
+                <p>I began by laying down a simple, clean HTML structure to house the timer interface. This foundational step ensured the UI would be both scalable and easy to style later. Next, I focused on implementing the core timer functionality using JavaScript. I built the timer logic from scratch, carefully managing time states for different modes—counting down for Pomodoro, counting up for the stopwatch, and handling pause/resume states.</p><br>
+                <p>To make the timer truly functional, I implemented the following key aspects:</p><br>
+                <ul>
+                    <li>TIME CALCULATIONS: Developed utility functions to convert between seconds and formatted time strings (e.g., <code>timeToSeconds</code>, <code>secondsToTime</code>), enabling flexible time manipulation and display.</li><br>
+                    <li>STATE MANAGEMENT: Built functions to save and load the timer’s current state in Chrome’s storage API (<code>saveState</code>, <code>loadState</code>), so the timer would persist correctly across browser sessions and tabs.</li><br>
+                    <li>MODE TRANSITIONS: Designed smooth switching between Pomodoro, stopwatch, and settings modes without losing user progress or resetting unnecessarily.</li><br>
+                    <li>USER CONTROLS: Added interactive buttons for starting, pausing, resetting, and switching modes, ensuring a responsive and intuitive user experience.</li><br>
+                    <li>NOTIFICATIONS AND REMINDERS: Integrated reminder intervals with visual and audio cues to alert users when Pomodoro sessions or breaks end.</li><br>
+                </ul>
+                <p>Once the timer was functionally solid, I moved on to styling it to match our Figma prototype, paying close attention to accessibility and responsive design to ensure the timer looked great on different screen sizes.</p><br>
+                <p>Throughout the process, Yurick and I made a strong commitment to writing clean, well-commented code. Given the complexity of time state logic, counting directions, interval reminders, and Chrome storage integration, we prioritized thorough comments to clarify the purpose of each function and the flow of data. This included detailed explanations for the time conversion utilities, state persistence methods, and how the modes interact.</p><br>
+                <p>Working with another person on a feature is challanging and often involved Yurick and I sitting together and looking at our code on one laptop, trying to figure out how to make something work. We also realised that working at the same time on seperate laptops often resulted in issues as we both did something differently, so instead we took turns or works together. This allowed us to build our feature optimally and with the least amount of overlap possible.</p><br>
+                <a href="https://git.fhict.nl/I524911/project-center/-/tree/dfe3c645ef38edfc3c4699b9affbb435d7baba5d/src/Features/Timer" target="_blank">
+                    <span class="highlight">VIEW TIMER FEATURE CODE WITH CLEAR COMMENTS &#8599;</span>
+                </a>
+            </div>
+        </section>
+        <section class="image-container">
+            <img src="images/comment-code.jpg">
+        </section>
+        <section class="image-container">
+            <video src="images/center-demo.mp4" style="width: 70%;" autoplay muted loop>
+                <source src="images/center-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
         <section class="aside-container grid-container" id="tile-grid-breakdown">
             <div class="aside-heading">
                 <h2>Tile Grid Breakdown</h2>
@@ -149,9 +184,6 @@
             <div class="quote-source">
                 <h4>- Pennie</h4>
             </div>
-        </section>
-        <section class="image-container">
-            <img src="images/comment-code.jpg">
         </section>
         <section class="aside-container grid-container">
             <div class="aside-text">
