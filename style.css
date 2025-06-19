@@ -30,7 +30,7 @@
   h1 {
     font-size: 120px;
     font-weight: 400;
-    color: #213F61;
+    color: #212961;
 }
 
 main  {
@@ -91,12 +91,16 @@ a {
     left: 0;
     color: #333; /* adjust color to match your theme */
   }
+
+  li {
+    font-weight: 400;
+}
   
   .back-button {
     display: inline-block;
     background-color: #FEFAED;
-    border: 2px solid brown;
-    color: brown;
+    border: 2px solid rgb(48, 42, 165);
+    color: rgb(48, 42, 165);
     padding: 8px 16px;
     /* margin: 20px; */
     border-radius: 20px;
@@ -117,7 +121,7 @@ a {
 }
 
 .back-button:hover {
-    background-color: brown;
+    background-color: rgb(48, 42, 165);
     color: #FEFAED;
 }
 
@@ -136,8 +140,8 @@ a {
   /* Toggle button styling */
   #toggleButton {
     background-color: #FEFAED;
-    border: 2px solid brown;
-    color: brown;
+    border: 2px solid rgb(48, 42, 165);
+    color: rgb(48, 42, 165);
     padding: 8px 16px;
     margin-top: 20px;
     border-radius: 20px;
@@ -147,7 +151,7 @@ a {
   }
   
   #toggleButton:hover {
-    background-color: brown;
+    background-color: rgb(48, 42, 165);
     color: #FEFAED;
   }
   
@@ -224,31 +228,8 @@ a {
   .portfolio-item:hover .tile-title {
     transform: translateY(0);
   }
-  
-  /* Nav-Bar styles */
-  .navbar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #FEFAED;
-    border: 2px solid brown;
-    display: flex;
-    gap: 40px;
-    padding: 10px 30px;
-    border-radius: 40px;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: brown;
-    font-weight: 400;
-    font-size: 18px;
-  }
-  
-  /* --- Restored Grid Container Layout --- */
+    
+  /* --- Grid Container Layout --- */
   .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
