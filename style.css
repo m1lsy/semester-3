@@ -13,10 +13,7 @@
   }
   
   body {
-    font-family: 'PolySansNeutral', inter, sans-serif;
-  }
-  
-  body {
+    font-family: 'PolySansNeutral';
     background-color: #F3F2F0;
     color: #323638;
   }
@@ -28,12 +25,14 @@
   
   
   h1 {
+    font-family: 'PolySansNeutral';
     font-size: 120px;
     font-weight: 400;
     color: #212961;
 }
 
 main  {
+  font-family: 'PolySansNeutral';
     margin: 0;
 }
 
@@ -59,7 +58,6 @@ h6 {
     text-transform: uppercase;
 }
 p {
-    font-family: inter;
     font-size: 20px;
     color: #323638;
 }
