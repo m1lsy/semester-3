@@ -41,23 +41,23 @@
                 <p>During my portfolio creation process, I encountered a significant challenge with version control when I accidentally committed a large video file that was over GitHub’s 100MB file size limit. This caused my push to GitHub to be rejected, blocking all future updates to the repository.</p>
                 <br>
                 <p>WHAT WENT WRONG:</p>
-                <ul class="dash-list">
+                <ul>
                     <li>I added and committed a .mov file that was 129MB, exceeding GitHub’s hard limit.</li>
                     <li>Pushing failed repeatedly with errors suggesting Git Large File Storage (LFS), but I chose not to use LFS.</li>
                     <li>I tried to remove the file using git-filter-repo, but it refused to run on a non-fresh repo without a --force flag.</li>
                     <li>After forcing it, I successfully removed the large file — but this also wiped my remote (origin) configuration, which meant my repo no longer knew where to push.</li>
                 </ul>
-        
+                <br>
                 <p>HOW I SOLVED IT:</p>
-                <ul class="dash-list">
+                <ul>
                     <li>Removed the large file from history using:<br><code>git filter-repo --path prototype-mockup-video.mov --invert-paths --force</code></li>
                     <li>Reconnected the remote repository after it was auto-removed:<br><code>git remote add origin https://github.com/m1lsy/semester-3.git</code></li>
                     <li>Forced a push to update the remote with the cleaned repository:<br><code>git push --force origin main</code></li>
                     <li>I made sure to compress the videos and images in order to still have them on my website</li>
                 </ul>
-        
+                <br>
                 <p>KEY TAKEAWAYS:</p>
-                <ul class="dash-list">
+                <ul>
                     <li>GitHub has a hard limit of 100MB per file — not just a warning.</li>
                     <li>Large binary files like videos should never be committed directly unless using a solution like Git LFS (which wasn't necessary here).</li>
                     <li><code>git filter-repo</code> is powerful for rewriting history but should be used cautiously.</li>
@@ -84,11 +84,25 @@
         </section>
         <section class="aside-container grid-container">
             <div class="aside-heading">
+                <h2>Learning React</h2>
+            </div>
+            <div class="aside-text">
+                <p>In our group project, we developed a web browser extention called Center, which serves as a helpful tool to help people affected by ADHD to get into a focused, undisturbed work session including a built in pomodoro timer and AI text summarizer. My primary role was to implement the front-end functionality of the pomodoro timer and stop watch feature.</p><br>
+                <p>My teammate suggested that we work using React which was a bit worrying for me as I have never previously worked with frameworks or libaries. Because I had no experience in this, I decided to start with a smaller personal project first in order to get a better understadning of React and how to go about creating this browser extention.</p>
+                <p>I first started by watching some youtube videos on React, but quickly realized these tutorials were too advanced for me and so I decided to ask my brother for help. My brother gave me a crash course on everything that I needed to start my learning journey and really helped me to see why people use frameworks and what React had to offer.</p><br>
+                <p>With this solid foundation, I developed a movie logger app in React using tailwind css and components, making sure to add many comments along the way to ensure I was understanding each step. </p><br>
+                <a href="code.html">
+                    <span class="highlight">VIEW MOVIE LOGGER APP PROCESS &#8599;</span>
+                </a>
+            </div>
+        </section>
+        <section class="aside-container grid-container">
+            <div class="aside-heading">
                 <h2>Developing 'Center'</h2>
             </div>
             <div class="aside-text">
-                <p>After setting up our GitLab repository, Yurick and I decided to split the tasks by features. We were tasked with building the timer feature, which included a Pomodoro timer, stopwatch, and settings panel.</p><br>
-                <p>I began by laying down a simple, clean HTML structure to house the timer interface. This foundational step ensured the UI would be both scalable and easy to style later. Next, I focused on implementing the core timer functionality using JavaScript. I built the timer logic from scratch, carefully managing time states for different modes—counting down for Pomodoro, counting up for the stopwatch, and handling pause/resume states.</p><br>
+                <p>After teaching myself the foundation of React and setting up our GitLab repository, we decided to split the tasks by features. Yurick and I were tasked with building the timer feature, which included a Pomodoro timer, stopwatch, and settings panel.</p><br>
+                <p>I began by laying down a simple, clean HTML structure to house the timer interface. Next, I focused on implementing the core timer functionality using JavaScript. I built the timer logic from scratch, carefully managing time states for different modes—counting down for Pomodoro, counting up for the stopwatch, and handling pause/resume states.</p><br>
                 <p>To make the timer truly functional, I implemented the following key aspects:</p><br>
                 <ul>
                     <li>TIME CALCULATIONS: Developed utility functions to convert between seconds and formatted time strings (e.g., <code>timeToSeconds</code>, <code>secondsToTime</code>), enabling flexible time manipulation and display.</li><br>
@@ -119,7 +133,7 @@
                 <h2>Tile Grid Breakdown</h2>
             </div>
             <div class="aside-text">
-                <p>To create a dynamic and visually engaging way to showcase my Projects and Learning Outcomes, I developed a custom JavaScript tile grid system. Below is a breakdown of how it works:</p><br>
+                <p>To create a dynamic and visually engaging way to showcase my Projects and Learning Outcomes in my portfolio, I developed a custom JavaScript tile grid system. Below is a breakdown of how it works:</p><br>
                 
                 <p>DATA-DRIVEN DESIGN</p>
                 <p>All tile content is defined in two structured arrays: <code>projects</code> and <code>learningOutcomes</code>. Each object includes:</p>
@@ -170,12 +184,15 @@
                 <h2>Code Quality</h2>
             </div>
             <div class="aside-text">
-                <p>Throughout this semester, I made a conscious effort to improve the quality of my code by focusing on organization, semantic HTML, and proper commenting practices. Initially, my portfolio lacked structure, as I had placed all my images directly in the root directory without using folders. After receiving feedback from my teachers, I reorganized my project by creating dedicated folders for assets like images, stylesheets, and scripts. This not only made my project easier to navigate but also demonstrated my ability to adapt and follow best practices.</p><br>
+                <p>Throughout this semester, I made a conscious effort to improve the quality of my code by focusing on organization, semantic HTML, and proper commenting practices. Initially, my portfolio lacked structure, as I had placed all my images directly in the root directory without using folders. After receiving feedback from my teachers, I reorganized my project by creating dedicated folders for assets like images and PDFs. This not only made my project easier to navigate but also demonstrated my ability to adapt and follow best practices.</p><br>
                 <p>Another area I worked on was commenting. Previously, I would either skip comments entirely or write vague ones that didn’t add much value. This semester, I made it a habit to include clear, descriptive comments in my code to explain the purpose of functions, sections, and complex logic. For example, in my JavaScript file, I added comments to document the tile grid rendering logic and event listeners, making it easier for others (and myself) to understand the code. I also made sure to add descriptive comments in my code for my group work, to make it understandable for my teammates.</p><br>
                 <a href="https://git.fhict.nl/I524911/project-center" target="_blank">
                     <span class="highlight">VIEW TEAM GITLAB REPOSITORY &#8599;</span>
                 </a>
             </div>
+        </section>
+        <section class="image-container">
+            <img src="images/comment-me.jpg" alt="Portfolio Structure">
         </section>
         <section class="quote-container grid-container">
             <div class="quote">
@@ -189,20 +206,6 @@
             <div class="aside-text">
                 <p>Additionally, I focused on using semantic HTML to improve accessibility and readability. I replaced generic <code>div</code> elements with more meaningful tags like <code>header</code> and <code>section</code>, ensuring my code aligns with modern web standards. This not only enhances the structure of my pages but also makes them more accessible to screen readers.</p><br>
                 <p>Overall, these improvements reflect my commitment to writing clean, maintainable code and my willingness to learn from feedback to become a better developer.</p>
-            </div>
-        </section>
-        <section class="aside-container grid-container">
-            <div class="aside-heading">
-                <h2>Learning React</h2>
-            </div>
-            <div class="aside-text">
-                <p>In our group project, we developed a web browser extention called Center, which serves as a helpful tool to help people affected by ADHD to get into a focused, undisturbed work session including a built in pomodoro timer and AI text summarizer. My primary role was to implement the front-end functionality of the pomodoro timer and stop watch feature.</p><br>
-                <p>My teammate suggested that we work using React which was a bit worrying for me as I have never previously worked with frameworks or libaries. Because I had no experience in this, I decided to start with a smaller personal project first in order to get a better understadning of React and how to go about creating this browser extention.</p>
-                <p>I first started by watching some youtube videos on React, but quickly realized these tutorials were too advanced for me and so I decided to ask my brother for help. My brother gave me a crash course on everything that I needed to start my learning journey and really helped me to see why people use frameworks and what React had to offer.</p><br>
-                <p>With this solid foundation, I developed a movie logger app in React using tailwind css and components, making sure to add many comments along the way to ensure I was understanding each step. </p><br>
-                <a href="code.html">
-                    <span class="highlight">VIEW MOVIE LOGGER APP PROCESS &#8599;</span>
-                </a>
             </div>
         </section>
         <section class="aside-container grid-container">
