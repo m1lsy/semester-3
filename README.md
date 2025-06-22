@@ -32,13 +32,13 @@ Each page includes **evidence**, **reflections**, and **proof of progress**.
 * **Code Projects** – Making a movie logging app.
 * **Portfolio Making** – Documentation and process of how this very portfolio was designed and built.
 
-#### 👩‍🎓 About Me
+#### About Me
 
 A short page introducing who I am, what I love doing, and where I’m heading.
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 | Category     | Tools Used                            |
 | ------------ | ------------------------------------- |
@@ -49,7 +49,7 @@ A short page introducing who I am, what I love doing, and where I’m heading.
 
 ---
 
-## 📁 Project Structure (Folders)
+## Project Structure (Folders)
 
 ```
 /root
